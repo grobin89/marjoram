@@ -1,0 +1,27 @@
+<html>
+   <head></head>
+   <body>
+	
+	   {% if latest_assets %}
+	   <table>
+		   <th>
+			   <td>#</td>
+			   <td>TYPE</td>
+			   <td>PURCHASED</td>
+			   <td>VALUE</td>
+		   </th>
+		   {% for asset in latest_assets %}
+		   <tr>
+			   <td>{{ asset.id }}</td>
+			   <td>{{ asset.asset_type }}</td>
+			   <td>{{ asset.purchase_date }}</td>
+                           <td>{{ asset.depreciate_value }}</td>
+		   </tr>
+		   {% endfor %}
+	   </table>
+           {% else %}
+	   <p>No assets in list</p>
+	   {% endif %}
+
+   </body>
+</html>
